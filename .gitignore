@@ -53,3 +53,6 @@ app.*.map.json
 
 # School related
 /instructions/
+
+# Misc files
+lib/example_main.dart
