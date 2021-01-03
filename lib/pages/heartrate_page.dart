@@ -1,3 +1,4 @@
+import 'package:final_project/pages/page_blueprint.dart';
 import 'package:flutter/material.dart';
 
 class HeartratePage extends StatefulWidget {
@@ -10,28 +11,9 @@ class HeartratePage extends StatefulWidget {
 class _HeartratePageState extends State<HeartratePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-      ),
-      child: Align(
-        alignment: Alignment.center,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          color: Colors.red,
-          child: Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Text(
-              'Heartrate data',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
-      ),
+    return PageBlueprint(
+      baseColor: Colors.red,
+      text: 'Heartrate data',
     );
   }
 }
