@@ -22,7 +22,6 @@ class _MyAppState extends State<MyApp> {
         textTheme: GoogleFonts.firaSansTextTheme(
           Theme.of(context).textTheme,
         ),
-        
       ),
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
