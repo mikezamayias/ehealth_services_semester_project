@@ -1,6 +1,7 @@
 import 'package:final_project/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +18,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // theme: ThemeData(fontFamily: 'Jura'),
+      theme: ThemeData(
+        textTheme: GoogleFonts.firaSansTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        
+      ),
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
