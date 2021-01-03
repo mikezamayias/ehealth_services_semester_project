@@ -12,8 +12,6 @@ dependencies:
   curved_navigation_bar:
   flutter:
     sdk: flutter
-
-
   cupertino_icons: ^1.0.1
 
 dev_dependencies:
@@ -24,3 +22,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+assets:
+  - assets/data/account.json
+  - assets/data/heartrate.json
+  - assets/data/sleep.json

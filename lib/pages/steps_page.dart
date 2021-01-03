@@ -24,7 +24,7 @@ class _StepsPageState extends State<StepsPage> {
           child: Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              'Steps data',
+              'Steps/Calories data',
               style: TextStyle(
                 color: Colors.white,
               ),
