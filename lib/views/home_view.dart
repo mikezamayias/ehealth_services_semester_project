@@ -1,7 +1,7 @@
 import 'package:final_project/pages/account_page.dart';
 import 'package:final_project/pages/heartrate_page.dart';
 import 'package:final_project/pages/sleep_page.dart';
-import 'package:final_project/pages/steps_page.dart';
+import 'package:final_project/pages/activity_page.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -21,7 +21,7 @@ class _HomeViewState extends State<HomeView> {
         return HeartratePage();
         break;
       case 1:
-        return StepsPage();
+        return ActivityPage();
         break;
       case 2:
         return SleepPage();

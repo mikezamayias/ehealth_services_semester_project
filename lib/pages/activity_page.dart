@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class StepsPage extends StatefulWidget {
-  StepsPage({Key key}) : super(key: key);
+class ActivityPage extends StatefulWidget {
+  ActivityPage({Key key}) : super(key: key);
 
   @override
-  _StepsPageState createState() => _StepsPageState();
+  _ActivityPageState createState() => _ActivityPageState();
 }
 
-class _StepsPageState extends State<StepsPage> {
+class _ActivityPageState extends State<ActivityPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
