@@ -13,7 +13,7 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return PageBlueprint(
       baseColor: Colors.blue,
-      text: 'Acount data',
+      text: 'Account data',
     );
   }
 }

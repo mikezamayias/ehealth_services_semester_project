@@ -17,7 +17,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData(fontFamily: 'Jura'),
       theme: ThemeData(
         textTheme: GoogleFonts.firaSansTextTheme(
           Theme.of(context).textTheme,
