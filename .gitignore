@@ -48,9 +48,6 @@ app.*.map.json
 # Assets related
 /assets/
 
-# Data related
-/lib/data/
-
 # School related
 /instructions/
 
