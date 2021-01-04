@@ -23,7 +23,7 @@ class _PageBlueprintState extends State<PageBlueprint> {
         padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 10.0),
         child: Card(
           elevation: 5.0,
-          shadowColor: Colors.grey[200],
+          shadowColor: Colors.grey[400],
           color: widget.baseColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -31,7 +31,7 @@ class _PageBlueprintState extends State<PageBlueprint> {
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Card(
-              shadowColor: Colors.grey[200],
+              shadowColor: Colors.grey[400],
               elevation: 5.0,
               color: Colors.white,
               shape: RoundedRectangleBorder(
@@ -40,7 +40,7 @@ class _PageBlueprintState extends State<PageBlueprint> {
               child: Align(
                 alignment: Alignment.center,
                 child: Card(
-                  shadowColor: Colors.grey[200],
+                  shadowColor: Colors.grey[400],
                   elevation: 5.0,
                   color: widget.baseColor,
                   shape: RoundedRectangleBorder(
