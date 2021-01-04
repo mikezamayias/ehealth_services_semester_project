@@ -11,15 +11,20 @@ class HeartrateDataEntry {
     this.aveValue,
   });
 
-  factory HeartrateDataEntry.fromJson(Map<String, dynamic> json) {
-    if (json == null) {
+  factory HeartrateDataEntry.fromJson(Map<dynamic, dynamic> parsedJsonData) {
+    if (parsedJsonData == null) {
       return null;
     }
     return HeartrateDataEntry(
-      dateTime: json['dateTime'],
-      minValue: json['minValue'],
-      maxValue: json['maxValue'],
-      aveValue: json['aveValue'],
+      dateTime: parsedJsonData['dateTime'],
+      minValue: parsedJsonData['minValue'],
+      maxValue: parsedJsonData['maxValue'],
+      aveValue: parsedJsonData['aveValue'],
     );
+  }
+
+  @override
+  String toString() {
+    return '{${this.dateTime}, ${this.minValue}, ${this.maxValue}, ${this.aveValue}}';
   }
 }

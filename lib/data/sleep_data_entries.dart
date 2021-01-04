@@ -1,19 +1,24 @@
 class SleepDataEntry {
-  final String dateTime;
+  final String dateOfSleep;
   final int duration;
 
   const SleepDataEntry({
-    this.dateTime,
+    this.dateOfSleep,
     this.duration,
   });
 
-  factory SleepDataEntry.fromJson(Map<String, dynamic> json) {
-    if (json == null) {
+  factory SleepDataEntry.fromJson(Map<dynamic, dynamic> parsedJsonData) {
+    if (parsedJsonData == null) {
       return null;
     }
     return SleepDataEntry(
-      dateTime: json['dateTime'],
-      duration: json['duration'],
+      dateOfSleep: parsedJsonData['dateOfSleep'],
+      duration: parsedJsonData['duration'],
     );
+  }
+
+  @override
+  String toString() {
+    return '{${this.dateOfSleep}, ${this.duration}}';
   }
 }
