@@ -4,11 +4,11 @@ class PageBlueprint extends StatefulWidget {
   const PageBlueprint({
     Key key,
     @required this.baseColor,
-    @required this.text,
+    @required this.child,
   }) : super(key: key);
 
   final Color baseColor;
-  final String text;
+  final Widget child;
 
   @override
   _PageBlueprintState createState() => _PageBlueprintState();
@@ -20,43 +20,22 @@ class _PageBlueprintState extends State<PageBlueprint> {
     return Align(
       alignment: Alignment.bottomRight,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 10.0),
+        padding: EdgeInsets.fromLTRB(8.0, 38.0, 8.0, 11.0),
         child: Card(
-          elevation: 5.0,
-          shadowColor: Colors.grey[400],
           color: widget.baseColor,
+          shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
           ),
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(11.0),
             child: Card(
-              shadowColor: Colors.grey[400],
-              elevation: 5.0,
-              color: Colors.white,
+              color: Colors.grey[200],
+              shadowColor: Colors.transparent,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),
               ),
-              child: Align(
-                alignment: Alignment.center,
-                child: Card(
-                  shadowColor: Colors.grey[400],
-                  elevation: 5.0,
-                  color: widget.baseColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Text(
-                      widget.text,
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              child: widget.child,
             ),
           ),
         ),
@@ -64,3 +43,21 @@ class _PageBlueprintState extends State<PageBlueprint> {
     );
   }
 }
+// Align(
+// alignment: Alignment.center,
+// child: Card(
+// color: widget.baseColor,
+// shape: RoundedRectangleBorder(
+// borderRadius: BorderRadius.all(Radius.circular(20.0)),
+// ),
+// child: Padding(
+// padding: EdgeInsets.all(20.0),
+// child: Text(
+// widget.text,
+// style: TextStyle(
+// color: Colors.white,
+// ),
+// ),
+// ),
+// ),
+// ),

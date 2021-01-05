@@ -46,7 +46,7 @@ app.*.map.json
 /android/app/release
 
 # Assets related
-/assets/
+#/assets/
 
 # School related
 /instructions/

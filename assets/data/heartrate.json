@@ -1,0 +1,46 @@
+{
+  "activities-heart": [
+    {
+      "dateTime": "2021-01-03",
+      "minValue": 54,
+      "maxValue": 116,
+      "aveValue": 71
+    },
+    {
+      "dateTime": "2021-01-02",
+      "minValue": 50,
+      "maxValue": 115,
+      "aveValue": 73
+    },
+    {
+      "dateTime": "2021-01-01",
+      "minValue": 50,
+      "maxValue": 122,
+      "aveValue": 74
+    },
+    {
+      "dateTime": "2020-12-31",
+      "minValue": 51,
+      "maxValue": 119,
+      "aveValue": 71
+    },
+    {
+      "dateTime": "2020-12-30",
+      "minValue": 43,
+      "maxValue": 120,
+      "aveValue": 71
+    },
+    {
+      "dateTime": "2020-12-29",
+      "minValue": 47,
+      "maxValue": 113,
+      "aveValue": 67
+    },
+    {
+      "dateTime": "2020-12-28",
+      "minValue": 46,
+      "maxValue": 121,
+      "aveValue": 66
+    }
+  ]
+}

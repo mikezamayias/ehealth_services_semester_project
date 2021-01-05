@@ -9,11 +9,32 @@ class ActivityPage extends StatefulWidget {
 }
 
 class _ActivityPageState extends State<ActivityPage> {
+  String text = 'Activity Data';
+  Color baseColor = Colors.green;
+
   @override
   Widget build(BuildContext context) {
     return PageBlueprint(
-      baseColor: Colors.green,
-      text: 'Activity data',
+      baseColor: baseColor,
+      child: Align(
+        alignment: Alignment.center,
+        child: Card(
+          shadowColor: Colors.transparent,
+          color: baseColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Text(
+              text,
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
