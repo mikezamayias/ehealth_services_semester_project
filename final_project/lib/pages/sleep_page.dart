@@ -36,7 +36,7 @@ class _SleepPageState extends State<SleepPage> {
         readings.add(
           FlSpot(
             sleepData.indexOf(reading).toDouble(),
-            reading.minutesAsleep.toDouble(),
+            reading.minutesAsleep.toDouble() / 60,
           ),
         );
       });
@@ -55,9 +55,9 @@ class _SleepPageState extends State<SleepPage> {
       text: 'Sleep',
       baseColor: baseColor,
       chart: BlueprintLineChart(
-        minY: 300,
-        maxY: 700,
-        interval: 100.0,
+        minY: 5,
+        maxY: 12,
+        interval: 2.0,
         graphData: {
           'data': readings,
         },
@@ -66,14 +66,14 @@ class _SleepPageState extends State<SleepPage> {
           baseColor,
         ],
         yLabels: (value) {
-          double result = value / 60;
+          double result = value;
           return '${result.toInt()} h';
         },
       ),
       chartLegendLabels: [
         Expanded(
           child: ChartLegendLabel(
-            text: 'Duration asleep',
+            text: 'Time asleep',
             backgroundColor: baseColor,
             textColor: Colors.grey[200],
           ),

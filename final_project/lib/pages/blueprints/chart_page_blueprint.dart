@@ -1,4 +1,4 @@
-import 'file:///C:/Users/szama/StudioProjects/temp/lib/pages/blueprints/page_blueprint.dart';
+import 'package:final_project/pages/blueprints/page_blueprint.dart';
 import 'package:flutter/material.dart';
 
 class ChartPageBlueprint extends StatelessWidget {

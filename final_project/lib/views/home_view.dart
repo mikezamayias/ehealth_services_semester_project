@@ -6,7 +6,9 @@ import 'package:final_project/pages/sleep_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
-  HomeView({Key key}) : super(key: key);
+  HomeView({
+    Key key,
+  }) : super(key: key);
 
   @override
   _HomeViewState createState() => _HomeViewState();

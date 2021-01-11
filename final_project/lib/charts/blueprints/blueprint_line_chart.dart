@@ -29,7 +29,7 @@ class BlueprintLineChart extends StatelessWidget {
         minY: minY,
         maxY: maxY,
         lineTouchData: lineTouchDataPreferences(),
-        gridData: gridDataPreferences(interval / 2),
+        gridData: gridDataPreferences(interval / 4),
         titlesData: titlesDataPreferences(),
         backgroundColor: Colors.transparent,
         borderData: borderDataPreferences(),
@@ -61,7 +61,7 @@ class BlueprintLineChart extends StatelessWidget {
       );
 
   LineTouchData lineTouchDataPreferences() => LineTouchData(
-        enabled: false,
+        enabled: true,
         touchTooltipData: LineTouchTooltipData(
           tooltipRoundedRadius: 20.0,
           tooltipBgColor: Colors.white.withOpacity(0.8),

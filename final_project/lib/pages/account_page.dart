@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jiffy/jiffy.dart';
 
-
 class AccountPage extends StatefulWidget {
   @override
   _AccountPageState createState() => _AccountPageState();

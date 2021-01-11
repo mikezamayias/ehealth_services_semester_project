@@ -25,9 +25,7 @@ class _PageBlueprintState extends State<PageBlueprint> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
           ),
-          child: Expanded(
-            child: widget.child,
-          ),
+          child: widget.child,
         ),
       ),
     );

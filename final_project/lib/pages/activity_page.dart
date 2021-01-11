@@ -84,8 +84,9 @@ class _ActivityPageState extends State<ActivityPage> {
           ),
         ),
         Expanded(
+          flex: 2,
           child: ChartLegendLabel(
-            text: 'Calories',
+            text: 'Calories in 10*kcal units',
             backgroundColor: Colors.amber,
             textColor: Colors.grey[850],
           ),
