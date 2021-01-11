@@ -53,7 +53,7 @@ class _HomeViewState extends State<HomeView> {
         items: <Widget>[
           Icon(
             Icons.favorite_rounded,
-            color: Colors.red,
+            color: Colors.red[600],
           ),
           Icon(
             Icons.directions_run_rounded,

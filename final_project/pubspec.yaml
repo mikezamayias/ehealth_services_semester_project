@@ -10,12 +10,15 @@ environment:
 
 dependencies:
   curved_navigation_bar:
-  google_fonts: ^1.1.1
-  http: ^0.12.2
-  test: ^1.15.7
+  google_fonts: any
+  date_format: any
+  cached_network_image: any
+  charts_flutter: any
+  fl_chart: any
+  jiffy: any
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.1
+  cupertino_icons: any
 
 dev_dependencies:
   flutter_test:
@@ -29,3 +32,4 @@ flutter:
     - assets/data/account.json
     - assets/data/heartrate.json
     - assets/data/sleep.json
+    - assets/data/activity.json

@@ -1,5 +1,12 @@
-import 'package:final_project/pages/page_blueprint.dart';
+
+import 'package:final_project/charts/blueprints/blueprint_line_chart.dart';
+import 'package:final_project/charts/chart_legend_label.dart';
+import 'package:final_project/constants.dart';
+import 'package:final_project/data/activity_data_parser.dart';
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/services.dart';
+import 'blueprints/chart_page_blueprint.dart';
 
 class ActivityPage extends StatefulWidget {
   ActivityPage({Key key}) : super(key: key);
@@ -12,29 +19,79 @@ class _ActivityPageState extends State<ActivityPage> {
   String text = 'Activity Data';
   Color baseColor = Colors.green;
 
+  List<Activity> activityReadings = [];
+
+  List<FlSpot> stepsData = [];
+  List<FlSpot> caloriesData = [];
+
+  Future<String> _loadJsonActivity() async =>
+      await rootBundle.loadString(activityData['jsonPath']);
+
+  Future loadActivityData() async {
+    String jsonString = await _loadJsonActivity();
+    final List<Activity> activityData = List.from(
+      activityDataFromJson(jsonString).activities.reversed,
+    );
+    setState(() {
+      for (Activity activity in activityData) {
+        activityReadings.add(activity);
+        stepsData.add(
+          FlSpot(
+            activityData.indexOf(activity).toDouble(),
+            activity.steps.toDouble(),
+          ),
+        );
+        caloriesData.add(
+          FlSpot(
+            activityData.indexOf(activity).toDouble(),
+            activity.calories.toDouble() / 100,
+          ),
+        );
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadActivityData();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return PageBlueprint(
+    return ChartPageBlueprint(
+      text: 'Activity',
       baseColor: baseColor,
-      child: Align(
-        alignment: Alignment.center,
-        child: Card(
-          shadowColor: Colors.transparent,
-          color: baseColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Text(
-              text,
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
+      chart: BlueprintLineChart(
+        minY: 0,
+        maxY: 5000,
+        interval: 1000,
+        readingsType: activityReadings,
+        graphData: {
+          'steps': stepsData,
+          'calories': caloriesData,
+        },
+        lineColors: [
+          baseColor,
+          Colors.amber,
+        ],
+      ),
+      chartLegendLabels: [
+        Expanded(
+          child: ChartLegendLabel(
+            text: 'Steps',
+            backgroundColor: baseColor,
+            textColor: Colors.grey[200],
           ),
         ),
-      ),
+        Expanded(
+          child: ChartLegendLabel(
+            text: 'Calories',
+            backgroundColor: Colors.amber,
+            textColor: Colors.grey[850],
+          ),
+        )
+      ],
     );
   }
 }

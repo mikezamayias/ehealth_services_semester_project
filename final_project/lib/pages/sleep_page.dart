@@ -1,8 +1,11 @@
+import 'package:final_project/charts/blueprints/blueprint_line_chart.dart';
+import 'package:final_project/charts/chart_legend_label.dart';
 import 'package:final_project/constants.dart';
 import 'package:final_project/data/sleep_data_parser.dart';
-import 'package:final_project/pages/page_blueprint.dart';
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/services.dart';
+import 'blueprints/chart_page_blueprint.dart';
 
 class SleepPage extends StatefulWidget {
   SleepPage({Key key}) : super(key: key);
@@ -17,16 +20,25 @@ class _SleepPageState extends State<SleepPage> {
 
   List<Sleep> sleepReadings = [];
 
-  Future<String> _loadJsonSleep() async {
-    return await rootBundle.loadString(sleepData['jsonPath']);
-  }
+  List<FlSpot> readings = [];
 
-  Future laodSleepData() async {
+  Future<String> _loadJsonSleep() async =>
+      await rootBundle.loadString(sleepData['jsonPath']);
+
+  Future loadSleepData() async {
     String jsonString = await _loadJsonSleep();
-    final sleepData = sleepDataFromJson(jsonString);
+    final List<Sleep> sleepData = List.from(
+      sleepDataFromJson(jsonString).sleep.reversed,
+    );
     setState(() {
-      sleepData.sleep.forEach((reading) {
+      sleepData.forEach((reading) {
         sleepReadings.add(reading);
+        readings.add(
+          FlSpot(
+            sleepData.indexOf(reading).toDouble(),
+            reading.minutesAsleep.toDouble(),
+          ),
+        );
       });
     });
   }
@@ -34,33 +46,39 @@ class _SleepPageState extends State<SleepPage> {
   @override
   void initState() {
     super.initState();
-    laodSleepData();
+    loadSleepData();
   }
-
 
   @override
   Widget build(BuildContext context) {
-    return PageBlueprint(
+    return ChartPageBlueprint(
+      text: 'Sleep',
       baseColor: baseColor,
-      child: Align(
-        alignment: Alignment.center,
-        child: Card(
-          shadowColor: Colors.transparent,
-          color: baseColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Text(
-              '${sleepReadings.length}',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
+      chart: BlueprintLineChart(
+        minY: 300,
+        maxY: 700,
+        interval: 100.0,
+        graphData: {
+          'data': readings,
+        },
+        readingsType: sleepReadings,
+        lineColors: [
+          baseColor,
+        ],
+        yLabels: (value) {
+          double result = value / 60;
+          return '${result.toInt()} h';
+        },
       ),
+      chartLegendLabels: [
+        Expanded(
+          child: ChartLegendLabel(
+            text: 'Duration asleep',
+            backgroundColor: baseColor,
+            textColor: Colors.grey[200],
+          ),
+        )
+      ],
     );
   }
 }

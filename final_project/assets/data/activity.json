@@ -1,0 +1,362 @@
+{
+  "activities": [
+    {
+      "activeDuration": 10000,
+      "activityLevel": [
+        {
+          "minutes": 0,
+          "name": "sedentary"
+        },
+        {
+          "minutes": 1,
+          "name": "lightly"
+        },
+        {
+          "minutes": 0,
+          "name": "fairly"
+        },
+        {
+          "minutes": 0,
+          "name": "very"
+        }
+      ],
+      "activityName": "Walk",
+      "activityTypeId": 90013,
+      "calories": 86000,
+      "caloriesLink": "https://api.fitbit.com/1/user/-/activities/calories/date/2021-01-03/2021-01-03/1min/time/0:00/0:00.json",
+      "distance": 3,
+      "distanceUnit": "Kilometer",
+      "duration": 10000,
+      "hasActiveZoneMinutes": false,
+      "lastModified": "2021-01-11T19:06:41.324Z",
+      "logId": 36805967011,
+      "logType": "manual",
+      "manualValuesSpecified": {
+        "calories": true,
+        "distance": true,
+        "steps": false
+      },
+      "originalDuration": 10000,
+      "originalStartTime": "2021-01-03T00:00:00.000+02:00",
+      "pace": 3.3333333333333335,
+      "source": {
+        "id": "227G5L",
+        "name": "Fitbit Explorer",
+        "trackerFeatures": [],
+        "type": "app",
+        "url": "http://swagger.io/swagger-ui/"
+      },
+      "speed": 1080,
+      "startTime": "2021-01-03T00:00:00.000+02:00",
+      "steps": 1881
+    },
+    {
+      "activeDuration": 10000,
+      "activityLevel": [
+        {
+          "minutes": 0,
+          "name": "sedentary"
+        },
+        {
+          "minutes": 1,
+          "name": "lightly"
+        },
+        {
+          "minutes": 0,
+          "name": "fairly"
+        },
+        {
+          "minutes": 0,
+          "name": "very"
+        }
+      ],
+      "activityName": "Walk",
+      "activityTypeId": 90013,
+      "calories": 64000,
+      "caloriesLink": "https://api.fitbit.com/1/user/-/activities/calories/date/2021-01-02/2021-01-02/1min/time/0:00/0:00.json",
+      "distance": 3,
+      "distanceUnit": "Kilometer",
+      "duration": 10000,
+      "hasActiveZoneMinutes": false,
+      "lastModified": "2021-01-11T19:07:18.885Z",
+      "logId": 36805897849,
+      "logType": "manual",
+      "manualValuesSpecified": {
+        "calories": true,
+        "distance": true,
+        "steps": false
+      },
+      "originalDuration": 10000,
+      "originalStartTime": "2021-01-02T00:00:00.000+02:00",
+      "pace": 3.3333333333333335,
+      "source": {
+        "id": "227G5L",
+        "name": "Fitbit Explorer",
+        "trackerFeatures": [],
+        "type": "app",
+        "url": "http://swagger.io/swagger-ui/"
+      },
+      "speed": 1080,
+      "startTime": "2021-01-02T00:00:00.000+02:00",
+      "steps": 1395
+    },
+    {
+      "activeDuration": 10000,
+      "activityLevel": [
+        {
+          "minutes": 0,
+          "name": "sedentary"
+        },
+        {
+          "minutes": 1,
+          "name": "lightly"
+        },
+        {
+          "minutes": 0,
+          "name": "fairly"
+        },
+        {
+          "minutes": 0,
+          "name": "very"
+        }
+      ],
+      "activityName": "Walk",
+      "activityTypeId": 90013,
+      "calories": 112000,
+      "caloriesLink": "https://api.fitbit.com/1/user/-/activities/calories/date/2021-01-01/2021-01-01/1min/time/0:00/0:00.json",
+      "distance": 3,
+      "distanceUnit": "Kilometer",
+      "duration": 10000,
+      "hasActiveZoneMinutes": false,
+      "lastModified": "2021-01-11T19:07:45.400Z",
+      "logId": 36829582695,
+      "logType": "manual",
+      "manualValuesSpecified": {
+        "calories": true,
+        "distance": true,
+        "steps": false
+      },
+      "originalDuration": 10000,
+      "originalStartTime": "2021-01-01T00:00:00.000+02:00",
+      "pace": 3.3333333333333335,
+      "source": {
+        "id": "227G5L",
+        "name": "Fitbit Explorer",
+        "trackerFeatures": [],
+        "type": "app",
+        "url": "http://swagger.io/swagger-ui/"
+      },
+      "speed": 1080,
+      "startTime": "2021-01-01T00:00:00.000+02:00",
+      "steps": 2443
+    },
+    {
+      "activeDuration": 10000,
+      "activityLevel": [
+        {
+          "minutes": 0,
+          "name": "sedentary"
+        },
+        {
+          "minutes": 1,
+          "name": "lightly"
+        },
+        {
+          "minutes": 0,
+          "name": "fairly"
+        },
+        {
+          "minutes": 0,
+          "name": "very"
+        }
+      ],
+      "activityName": "Walk",
+      "activityTypeId": 90013,
+      "calories": 99000,
+      "caloriesLink": "https://api.fitbit.com/1/user/-/activities/calories/date/2020-12-31/2020-12-31/1min/time/0:00/0:00.json",
+      "distance": 3,
+      "distanceUnit": "Kilometer",
+      "duration": 10000,
+      "hasActiveZoneMinutes": false,
+      "lastModified": "2021-01-11T19:08:28.444Z",
+      "logId": 36807009521,
+      "logType": "manual",
+      "manualValuesSpecified": {
+        "calories": true,
+        "distance": true,
+        "steps": false
+      },
+      "originalDuration": 10000,
+      "originalStartTime": "2020-12-31T00:00:00.000+02:00",
+      "pace": 3.3333333333333335,
+      "source": {
+        "id": "227G5L",
+        "name": "Fitbit Explorer",
+        "trackerFeatures": [],
+        "type": "app",
+        "url": "http://swagger.io/swagger-ui/"
+      },
+      "speed": 1080,
+      "startTime": "2020-12-31T00:00:00.000+02:00",
+      "steps": 2160
+    },
+    {
+      "activeDuration": 10000,
+      "activityLevel": [
+        {
+          "minutes": 0,
+          "name": "sedentary"
+        },
+        {
+          "minutes": 1,
+          "name": "lightly"
+        },
+        {
+          "minutes": 0,
+          "name": "fairly"
+        },
+        {
+          "minutes": 0,
+          "name": "very"
+        }
+      ],
+      "activityName": "Walk",
+      "activityTypeId": 90013,
+      "calories": 223000,
+      "caloriesLink": "https://api.fitbit.com/1/user/-/activities/calories/date/2020-12-30/2020-12-30/1min/time/0:00/0:00.json",
+      "distance": 3,
+      "distanceUnit": "Kilometer",
+      "duration": 10000,
+      "hasActiveZoneMinutes": false,
+      "lastModified": "2021-01-11T19:09:18.390Z",
+      "logId": 36803949869,
+      "logType": "manual",
+      "manualValuesSpecified": {
+        "calories": true,
+        "distance": true,
+        "steps": false
+      },
+      "originalDuration": 10000,
+      "originalStartTime": "2020-12-30T00:00:00.000+02:00",
+      "pace": 3.3333333333333335,
+      "source": {
+        "id": "227G5L",
+        "name": "Fitbit Explorer",
+        "trackerFeatures": [],
+        "type": "app",
+        "url": "http://swagger.io/swagger-ui/"
+      },
+      "speed": 1080,
+      "startTime": "2020-12-30T00:00:00.000+02:00",
+      "steps": 4870
+    },
+    {
+      "activeDuration": 10000,
+      "activityLevel": [
+        {
+          "minutes": 0,
+          "name": "sedentary"
+        },
+        {
+          "minutes": 1,
+          "name": "lightly"
+        },
+        {
+          "minutes": 0,
+          "name": "fairly"
+        },
+        {
+          "minutes": 0,
+          "name": "very"
+        }
+      ],
+      "activityName": "Walk",
+      "activityTypeId": 90013,
+      "calories": 51000,
+      "caloriesLink": "https://api.fitbit.com/1/user/-/activities/calories/date/2020-12-29/2020-12-29/1min/time/0:00/0:00.json",
+      "distance": 3,
+      "distanceUnit": "Kilometer",
+      "duration": 10000,
+      "hasActiveZoneMinutes": false,
+      "lastModified": "2021-01-11T19:10:09.219Z",
+      "logId": 36803329786,
+      "logType": "manual",
+      "manualValuesSpecified": {
+        "calories": true,
+        "distance": true,
+        "steps": false
+      },
+      "originalDuration": 10000,
+      "originalStartTime": "2020-12-29T00:00:00.000+02:00",
+      "pace": 3.3333333333333335,
+      "source": {
+        "id": "227G5L",
+        "name": "Fitbit Explorer",
+        "trackerFeatures": [],
+        "type": "app",
+        "url": "http://swagger.io/swagger-ui/"
+      },
+      "speed": 1080,
+      "startTime": "2020-12-29T00:00:00.000+02:00",
+      "steps": 1122
+    },
+    {
+      "activeDuration": 10000,
+      "activityLevel": [
+        {
+          "minutes": 0,
+          "name": "sedentary"
+        },
+        {
+          "minutes": 1,
+          "name": "lightly"
+        },
+        {
+          "minutes": 0,
+          "name": "fairly"
+        },
+        {
+          "minutes": 0,
+          "name": "very"
+        }
+      ],
+      "activityName": "Walk",
+      "activityTypeId": 90013,
+      "calories": 114000,
+      "caloriesLink": "https://api.fitbit.com/1/user/-/activities/calories/date/2020-12-28/2020-12-28/1min/time/0:00/0:00.json",
+      "distance": 3,
+      "distanceUnit": "Kilometer",
+      "duration": 10000,
+      "hasActiveZoneMinutes": false,
+      "lastModified": "2021-01-11T19:10:37.492Z",
+      "logId": 36805937442,
+      "logType": "manual",
+      "manualValuesSpecified": {
+        "calories": true,
+        "distance": true,
+        "steps": false
+      },
+      "originalDuration": 10000,
+      "originalStartTime": "2020-12-28T00:00:00.000+02:00",
+      "pace": 3.3333333333333335,
+      "source": {
+        "id": "227G5L",
+        "name": "Fitbit Explorer",
+        "trackerFeatures": [],
+        "type": "app",
+        "url": "http://swagger.io/swagger-ui/"
+      },
+      "speed": 1080,
+      "startTime": "2020-12-28T00:00:00.000+02:00",
+      "steps": 2486
+    }
+  ],
+  "pagination": {
+    "beforeDate": "2021-01-11",
+    "limit": 100,
+    "next": "",
+    "offset": 0,
+    "previous": "",
+    "sort": "desc"
+  }
+}

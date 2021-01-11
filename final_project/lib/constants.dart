@@ -11,3 +11,7 @@ Map<String, String> sleepData = {
 Map<String, String> accountData = {
   'jsonPath': 'assets/data/account.json',
 };
+
+Map<String, String> activityData = {
+  'jsonPath': 'assets/data/activity.json',
+};
