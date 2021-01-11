@@ -1,4 +1,3 @@
-// import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_project/views/profile/profile_element_view.dart';
 import 'package:flutter/material.dart';
 

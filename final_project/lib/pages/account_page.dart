@@ -1,11 +1,12 @@
 import 'package:final_project/constants.dart';
 import 'package:final_project/data/account_data_parser.dart';
-import 'file:///C:/Users/szama/StudioProjects/temp/lib/pages/blueprints/page_blueprint.dart';
+import 'package:final_project/pages/blueprints/page_blueprint.dart';
 import 'package:final_project/views/profile/profile_image_view.dart';
 import 'package:final_project/views/profile/profile_text_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jiffy/jiffy.dart';
+
 
 class AccountPage extends StatefulWidget {
   @override
