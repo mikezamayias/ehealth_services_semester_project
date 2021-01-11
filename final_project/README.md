@@ -1,17 +1,7 @@
 # final_project
 
-A new Flutter project.
+Repo for the semester project for the course of Multimedia eHealth Services.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# eHealth-Services-Semester-Project
+# Take note
+- Dart files in `lib\data` (`lib\data\*_parser.dart`) where *auto-generated* from the site [app.quicktype.io](https://app.quicktype.io/).
+- The rest of the code was written by *me*.
