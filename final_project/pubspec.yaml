@@ -9,16 +9,13 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  curved_navigation_bar:
-  google_fonts: any
-  date_format: any
-  cached_network_image: any
-  charts_flutter: any
-  fl_chart: any
-  jiffy: any
   flutter:
     sdk: flutter
   cupertino_icons: any
+  curved_navigation_bar: any
+  google_fonts: any
+  fl_chart: any
+  jiffy: any
 
 dev_dependencies:
   flutter_test:
