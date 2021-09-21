@@ -16,13 +16,15 @@ class ProfileTextView extends StatelessWidget {
     return ProfileElementView(
       flex: 1,
       text: text,
-      child: Text(
-        data,
-        textAlign: TextAlign.right,
-        style: TextStyle(
-          color: Colors.white,
-        ),
-      ),
+      child: data != null
+          ? Text(
+              data,
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            )
+          : Container(),
     );
   }
 }

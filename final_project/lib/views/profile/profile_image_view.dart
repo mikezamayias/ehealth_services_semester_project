@@ -20,11 +20,25 @@ class ProfileImageView extends StatelessWidget {
         alignment: Alignment.centerRight,
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
-          child: Image(
-            image: NetworkImage(
-              data,
-            ),
-          ),
+          child: data != null
+              ? Image.network(
+                  data,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    }
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes
+                            : null,
+                      ),
+                    );
+                  },
+                )
+              : Container(),
         ),
       ),
     );
