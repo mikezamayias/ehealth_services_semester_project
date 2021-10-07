@@ -16,6 +16,7 @@ dependencies:
   google_fonts: any
   fl_chart: any
   jiffy: any
+  flutter_lints: any
 
 dev_dependencies:
   flutter_test:
