@@ -94,7 +94,7 @@ class BlueprintLineChart extends StatelessWidget {
         ),
         bottomTitles: SideTitles(
           showTitles: true,
-          getTextStyles: (value) => TextStyle(
+          getTextStyles: (value) => const TextStyle(
             color: Color(0xff303030),
             fontSize: 12,
           ),

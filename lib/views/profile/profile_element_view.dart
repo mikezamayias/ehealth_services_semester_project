@@ -20,7 +20,7 @@ class ProfileElementView extends StatelessWidget {
         color: Colors.blue,
         shadowColor: Colors.transparent,
         elevation: 0.0,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
         child: Row(
@@ -32,7 +32,7 @@ class ProfileElementView extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Text(
                     text,
                     textAlign: TextAlign.left,
@@ -48,7 +48,7 @@ class ProfileElementView extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: child,
                 ),
               ),

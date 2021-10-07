@@ -20,7 +20,7 @@ class ProfileTextView extends StatelessWidget {
           ? Text(
               data,
               textAlign: TextAlign.right,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
               ),
             )

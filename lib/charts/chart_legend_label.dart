@@ -18,11 +18,11 @@ class ChartLegendLabel extends StatelessWidget {
       color: backgroundColor,
       shadowColor: Colors.transparent,
       elevation: 0.0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(20.0)),
       ),
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Center(
           child: Text(
             text,

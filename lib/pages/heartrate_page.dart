@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class HeartratePage extends StatefulWidget {
-  HeartratePage({Key key}) : super(key: key);
+  const HeartratePage({Key key}) : super(key: key);
 
   @override
   _HeartratePageState createState() => _HeartratePageState();

@@ -23,19 +23,19 @@ class ChartPageBlueprint extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Card(
                 color: baseColor,
                 shadowColor: Colors.transparent,
                 elevation: 0.0,
-                shape: RoundedRectangleBorder(
+                shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 ),
                 child: Center(
                   child: Text(
                     text,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -48,12 +48,12 @@ class ChartPageBlueprint extends StatelessWidget {
           Expanded(
             flex: 4,
             child: Padding(
-              padding: EdgeInsets.all(0.0),
+              padding: const EdgeInsets.all(0.0),
               child: chart,
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20.0),
             child: Row(
               children: chartLegendLabels,
             ),

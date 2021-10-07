@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class SleepPage extends StatefulWidget {
-  SleepPage({Key key}) : super(key: key);
+  const SleepPage({Key key}) : super(key: key);
 
   @override
   _SleepPageState createState() => _SleepPageState();
@@ -31,7 +31,7 @@ class _SleepPageState extends State<SleepPage> {
       sleepDataFromJson(jsonString).sleep.reversed,
     );
     setState(() {
-      sleepData.forEach((reading) {
+      for (Sleep reading in sleepData) {
         sleepReadings.add(reading);
         readings.add(
           FlSpot(
@@ -39,7 +39,7 @@ class _SleepPageState extends State<SleepPage> {
             reading.minutesAsleep.toDouble() / 60,
           ),
         );
-      });
+      }
     });
   }
 

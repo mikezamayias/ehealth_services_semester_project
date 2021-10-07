@@ -18,11 +18,11 @@ class _PageBlueprintState extends State<PageBlueprint> {
     return Align(
       alignment: Alignment.bottomRight,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(8.0, 38.0, 8.0, 11.0),
+        padding: const EdgeInsets.fromLTRB(8.0, 38.0, 8.0, 11.0),
         child: Card(
           color: Colors.grey[200],
           shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
           ),
           child: widget.child,

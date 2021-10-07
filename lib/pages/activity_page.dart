@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class ActivityPage extends StatefulWidget {
-  ActivityPage({Key key}) : super(key: key);
+  const ActivityPage({Key key}) : super(key: key);
 
   @override
   _ActivityPageState createState() => _ActivityPageState();

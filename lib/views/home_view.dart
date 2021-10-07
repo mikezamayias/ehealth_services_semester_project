@@ -6,7 +6,7 @@ import 'package:final_project/pages/sleep_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
-  HomeView({
+  const HomeView({
     Key key,
   }) : super(key: key);
 
@@ -20,19 +20,19 @@ class _HomeViewState extends State<HomeView> {
   Widget _pageController(int pageIndex) {
     switch (pageIndex) {
       case 0:
-        return HeartratePage();
+        return const HeartratePage();
         break;
       case 1:
-        return ActivityPage();
+        return const ActivityPage();
         break;
       case 2:
-        return SleepPage();
+        return const SleepPage();
         break;
       case 3:
-        return AccountPage();
+        return const AccountPage();
         break;
       default:
-        return AccountPage();
+        return const AccountPage();
         break;
     }
   }
@@ -45,7 +45,7 @@ class _HomeViewState extends State<HomeView> {
         color: Colors.grey[200],
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOutCubic,
-        animationDuration: Duration(milliseconds: 400),
+        animationDuration: const Duration(milliseconds: 400),
         index: pageIndex,
         onTap: (int iconIndex) {
           setState(() {
@@ -57,15 +57,15 @@ class _HomeViewState extends State<HomeView> {
             Icons.favorite_rounded,
             color: Colors.red[600],
           ),
-          Icon(
+          const Icon(
             Icons.directions_run_rounded,
             color: Colors.green,
           ),
-          Icon(
+          const Icon(
             Icons.hotel,
             color: Colors.purple,
           ),
-          Icon(
+          const Icon(
             Icons.account_box_rounded,
             color: Colors.blue,
           ),

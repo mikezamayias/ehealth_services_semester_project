@@ -19,7 +19,7 @@ class ProfileImageView extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerRight,
         child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(20.0)),
           child: data != null
               ? Image.network(
                   data,

@@ -8,6 +8,8 @@ import 'package:flutter/services.dart';
 import 'package:jiffy/jiffy.dart';
 
 class AccountPage extends StatefulWidget {
+  const AccountPage({Key key}) : super(key: key);
+
   @override
   _AccountPageState createState() => _AccountPageState();
 }
@@ -16,7 +18,7 @@ class _AccountPageState extends State<AccountPage> {
   String text = 'Account Data';
   Color baseColor = Colors.blue;
 
-  User profile = new User();
+  User profile = User();
 
   String avatarURL;
   String fullName;
@@ -33,7 +35,7 @@ class _AccountPageState extends State<AccountPage> {
     setState(() {
       profile = accountData.user;
       avatarURL = profile.avatar640;
-      fullName = '${profile.fullName}';
+      fullName = profile.fullName;
       dateOfBirth = Jiffy(profile.dateOfBirth).yMMMMd;
       age = '${profile.age}';
     });
@@ -53,17 +55,17 @@ class _AccountPageState extends State<AccountPage> {
         child: Card(
           shadowColor: Colors.transparent,
           color: Colors.transparent,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
           ),
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Expanded(
+                const Expanded(
                   flex: 1,
                   child: Card(
                     color: Colors.blue,
