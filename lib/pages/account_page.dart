@@ -1,11 +1,12 @@
-import 'package:final_project/constants.dart';
-import 'package:final_project/data/account_data_parser.dart';
-import 'package:final_project/pages/blueprints/page_blueprint.dart';
-import 'package:final_project/views/profile/profile_image_view.dart';
-import 'package:final_project/views/profile/profile_text_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jiffy/jiffy.dart';
+
+import '../constants.dart';
+import '../data/account_parser.dart';
+import '../views/profile/profile_image_view.dart';
+import '../views/profile/profile_text_view.dart';
+import 'blueprints/page_blueprint.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({Key key}) : super(key: key);

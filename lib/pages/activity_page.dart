@@ -1,11 +1,12 @@
-import 'package:final_project/constants.dart';
-import 'package:final_project/data/activity_data_parser.dart';
-import 'package:final_project/pages/blueprints/chart_page_blueprint.dart';
-import 'package:final_project/charts/blueprints/blueprint_line_chart.dart';
-import 'package:final_project/charts/chart_legend_label.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fl_chart/fl_chart.dart';
+
+import '../charts/blueprints/blueprint_line_chart.dart';
+import '../charts/chart_legend_label.dart';
+import '../constants.dart';
+import '../data/activity_parser.dart';
+import 'blueprints/chart_page_blueprint.dart';
 
 class ActivityPage extends StatefulWidget {
   const ActivityPage({Key key}) : super(key: key);
