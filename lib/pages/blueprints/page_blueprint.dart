@@ -18,7 +18,7 @@ class _PageBlueprintState extends State<PageBlueprint> {
     return Align(
       alignment: Alignment.bottomRight,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(8.0, 38.0, 8.0, 11.0),
+        padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 18),
         child: Card(
           color: Colors.grey[200],
           shadowColor: Colors.transparent,
