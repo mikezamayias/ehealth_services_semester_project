@@ -52,3 +52,11 @@ app.*.map.json
 /web/
 
 .DS_Store
+
+# Build related
+android/
+ios/
+macos/
+windows/
+web/
+linux/
