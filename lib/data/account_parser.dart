@@ -11,7 +11,7 @@ String accountDataToJson(AccountData data) => json.encode(data.toJson());
 
 class AccountData {
   AccountData({
-    this.user,
+    required this.user,
   });
 
   final User user;
@@ -73,50 +73,50 @@ class User {
     this.weightUnit,
   });
 
-  final int age;
-  final bool ambassador;
-  final String avatar;
-  final String avatar150;
-  final String avatar640;
-  final int averageDailySteps;
-  final bool challengesBeta;
-  final String clockTimeDisplayFormat;
-  final bool corporate;
-  final bool corporateAdmin;
-  final DateTime dateOfBirth;
-  final String displayName;
-  final String displayNameSetting;
-  final String distanceUnit;
-  final String encodedId;
-  final Features features;
-  final String firstName;
-  final String fullName;
-  final String gender;
-  final String glucoseUnit;
-  final int height;
-  final String heightUnit;
-  final bool isBugReportEnabled;
-  final bool isChild;
-  final bool isCoach;
-  final String languageLocale;
-  final String lastName;
-  final bool legalTermsAcceptRequired;
-  final String locale;
-  final DateTime memberSince;
-  final bool mfaEnabled;
-  final int offsetFromUtcMillis;
-  final bool sdkDeveloper;
-  final String sleepTracking;
-  final String startDayOfWeek;
-  final double strideLengthRunning;
-  final String strideLengthRunningType;
-  final double strideLengthWalking;
-  final String strideLengthWalkingType;
-  final String swimUnit;
-  final String timezone;
-  final List<dynamic> topBadges;
-  final int weight;
-  final String weightUnit;
+  final int? age;
+  final bool? ambassador;
+  final String? avatar;
+  final String? avatar150;
+  final String? avatar640;
+  final int? averageDailySteps;
+  final bool? challengesBeta;
+  final String? clockTimeDisplayFormat;
+  final bool? corporate;
+  final bool? corporateAdmin;
+  final DateTime? dateOfBirth;
+  final String? displayName;
+  final String? displayNameSetting;
+  final String? distanceUnit;
+  final String? encodedId;
+  final Features? features;
+  final String? firstName;
+  final String? fullName;
+  final String? gender;
+  final String? glucoseUnit;
+  final int? height;
+  final String? heightUnit;
+  final bool? isBugReportEnabled;
+  final bool? isChild;
+  final bool? isCoach;
+  final String? languageLocale;
+  final String? lastName;
+  final bool? legalTermsAcceptRequired;
+  final String? locale;
+  final DateTime? memberSince;
+  final bool? mfaEnabled;
+  final int? offsetFromUtcMillis;
+  final bool? sdkDeveloper;
+  final String? sleepTracking;
+  final String? startDayOfWeek;
+  final double? strideLengthRunning;
+  final String? strideLengthRunningType;
+  final double? strideLengthWalking;
+  final String? strideLengthWalkingType;
+  final String? swimUnit;
+  final String? timezone;
+  final List<dynamic>? topBadges;
+  final int? weight;
+  final String? weightUnit;
 
   factory User.fromJson(Map<String, dynamic> json) => User(
         age: json["age"],
@@ -177,12 +177,12 @@ class User {
         "corporate": corporate,
         "corporateAdmin": corporateAdmin,
         "dateOfBirth":
-            "${dateOfBirth.year.toString().padLeft(4, '0')}-${dateOfBirth.month.toString().padLeft(2, '0')}-${dateOfBirth.day.toString().padLeft(2, '0')}",
+            "${dateOfBirth?.year.toString().padLeft(4, '0')}-${dateOfBirth?.month.toString().padLeft(2, '0')}-${dateOfBirth?.day.toString().padLeft(2, '0')}",
         "displayName": displayName,
         "displayNameSetting": displayNameSetting,
         "distanceUnit": distanceUnit,
         "encodedId": encodedId,
-        "features": features.toJson(),
+        "features": features?.toJson(),
         "firstName": firstName,
         "fullName": fullName,
         "gender": gender,
@@ -197,7 +197,7 @@ class User {
         "legalTermsAcceptRequired": legalTermsAcceptRequired,
         "locale": locale,
         "memberSince":
-            "${memberSince.year.toString().padLeft(4, '0')}-${memberSince.month.toString().padLeft(2, '0')}-${memberSince.day.toString().padLeft(2, '0')}",
+            "${memberSince?.year.toString().padLeft(4, '0')}-${memberSince?.month.toString().padLeft(2, '0')}-${memberSince?.day.toString().padLeft(2, '0')}",
         "mfaEnabled": mfaEnabled,
         "offsetFromUTCMillis": offsetFromUtcMillis,
         "sdkDeveloper": sdkDeveloper,
@@ -209,7 +209,7 @@ class User {
         "strideLengthWalkingType": strideLengthWalkingType,
         "swimUnit": swimUnit,
         "timezone": timezone,
-        "topBadges": List<dynamic>.from(topBadges.map((x) => x)),
+        "topBadges": List<dynamic>.from(topBadges!.map((x) => x)),
         "weight": weight,
         "weightUnit": weightUnit,
       };
@@ -220,7 +220,7 @@ class Features {
     this.exerciseGoal,
   });
 
-  final bool exerciseGoal;
+  final bool? exerciseGoal;
 
   factory Features.fromJson(Map<String, dynamic> json) => Features(
         exerciseGoal: json["exerciseGoal"],

@@ -9,25 +9,25 @@ import '../views/profile/profile_text_view.dart';
 import 'blueprints/page_blueprint.dart';
 
 class AccountPage extends StatefulWidget {
-  const AccountPage({Key key}) : super(key: key);
+  const AccountPage({Key? key}) : super(key: key);
 
   @override
-  _AccountPageState createState() => _AccountPageState();
+  AccountPageState createState() => AccountPageState();
 }
 
-class _AccountPageState extends State<AccountPage> {
+class AccountPageState extends State<AccountPage> {
   String text = 'Account Data';
   Color baseColor = Colors.blue;
 
   User profile = User();
 
-  String avatarURL;
-  String fullName;
-  String dateOfBirth;
-  String age;
+  String avatarURL = '';
+  String fullName = '';
+  String dateOfBirth = '';
+  String age = '';
 
   Future<String> _loadJsonAccount() async {
-    return await rootBundle.loadString(accountData['jsonPath']);
+    return await rootBundle.loadString(accountData['jsonPath']!);
   }
 
   Future loadAccountData() async {
@@ -35,9 +35,9 @@ class _AccountPageState extends State<AccountPage> {
     final accountData = accountDataFromJson(jsonString);
     setState(() {
       profile = accountData.user;
-      avatarURL = profile.avatar640;
-      fullName = profile.fullName;
-      dateOfBirth = Jiffy(profile.dateOfBirth).yMMMMd;
+      avatarURL = profile.avatar640!;
+      fullName = profile.fullName!;
+      dateOfBirth = Jiffy.parse(profile.dateOfBirth.toString()).yMMMMd;
       age = '${profile.age}';
     });
   }

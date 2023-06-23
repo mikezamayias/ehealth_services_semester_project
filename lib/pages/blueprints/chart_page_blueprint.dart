@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class ChartPageBlueprint extends StatelessWidget {
   const ChartPageBlueprint({
-    Key key,
-    @required this.text,
-    @required this.baseColor,
-    @required this.chart,
-    @required this.chartLegendLabels,
+    Key? key,
+    required this.text,
+    required this.baseColor,
+    required this.chart,
+    required this.chartLegendLabels,
   }) : super(key: key);
 
   final String text;

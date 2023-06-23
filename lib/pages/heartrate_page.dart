@@ -9,15 +9,15 @@ import '../data/heartrate_parser.dart';
 import 'blueprints/chart_page_blueprint.dart';
 
 class HeartratePage extends StatefulWidget {
-  const HeartratePage({Key key}) : super(key: key);
+  const HeartratePage({Key? key}) : super(key: key);
 
   @override
-  _HeartratePageState createState() => _HeartratePageState();
+  HeartratePageState createState() => HeartratePageState();
 }
 
-class _HeartratePageState extends State<HeartratePage> {
+class HeartratePageState extends State<HeartratePage> {
   String text = 'Heartrate Data';
-  Color baseColor = Colors.red[700];
+  Color baseColor = Colors.red[700]!;
 
   List<ActivitiesHeart> heartrateReadings = [];
 
@@ -26,12 +26,12 @@ class _HeartratePageState extends State<HeartratePage> {
   List<FlSpot> readingsMin = [];
 
   Future<String> _loadJsonHeartrate() async =>
-      await rootBundle.loadString(heartrateData['jsonPath']);
+      await rootBundle.loadString(heartrateData['jsonPath']!);
 
   Future loadHeartrateData() async {
     String jsonString = await _loadJsonHeartrate();
     final List<ActivitiesHeart> heartrateData = List.from(
-      heartrateDataFromJson(jsonString).activitiesHeart.reversed,
+      heartrateDataFromJson(jsonString).activitiesHeart!.reversed,
     );
     setState(() {
       for (ActivitiesHeart heartActivity in heartrateData) {
@@ -39,19 +39,19 @@ class _HeartratePageState extends State<HeartratePage> {
         readingsMax.add(
           FlSpot(
             heartrateData.indexOf(heartActivity).toDouble(),
-            heartActivity.maxValue.toDouble(),
+            heartActivity.maxValue!.toDouble(),
           ),
         );
         readingsMin.add(
           FlSpot(
             heartrateData.indexOf(heartActivity).toDouble(),
-            heartActivity.minValue.toDouble(),
+            heartActivity.minValue!.toDouble(),
           ),
         );
         readingsAve.add(
           FlSpot(
             heartrateData.indexOf(heartActivity).toDouble(),
-            heartActivity.aveValue.toDouble(),
+            heartActivity.aveValue!.toDouble(),
           ),
         );
       }
@@ -68,7 +68,7 @@ class _HeartratePageState extends State<HeartratePage> {
   Widget build(BuildContext context) {
     return ChartPageBlueprint(
       text: 'Heartrate',
-      baseColor: Colors.red[900],
+      baseColor: Colors.red[900]!,
       chart: BlueprintLineChart(
         minY: 30.0,
         maxY: 140.0,
@@ -90,21 +90,21 @@ class _HeartratePageState extends State<HeartratePage> {
           child: ChartLegendLabel(
             text: 'Minimum',
             backgroundColor: Colors.blue,
-            textColor: Colors.grey[200],
+            textColor: Colors.grey[200]!,
           ),
         ),
         Expanded(
           child: ChartLegendLabel(
             text: 'Average',
             backgroundColor: Colors.amber,
-            textColor: Colors.grey[850],
+            textColor: Colors.grey[850]!,
           ),
         ),
         Expanded(
           child: ChartLegendLabel(
             text: 'Maximum',
             backgroundColor: baseColor,
-            textColor: Colors.grey[200],
+            textColor: Colors.grey[200]!,
           ),
         ),
       ],

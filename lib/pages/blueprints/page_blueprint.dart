@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class PageBlueprint extends StatefulWidget {
   const PageBlueprint({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
   }) : super(key: key);
 
   final Widget child;
 
   @override
-  _PageBlueprintState createState() => _PageBlueprintState();
+  PageBlueprintState createState() => PageBlueprintState();
 }
 
-class _PageBlueprintState extends State<PageBlueprint> {
+class PageBlueprintState extends State<PageBlueprint> {
   @override
   Widget build(BuildContext context) {
     return Align(

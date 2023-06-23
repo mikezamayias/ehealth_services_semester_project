@@ -14,8 +14,8 @@ class SleepData {
         this.sleep,
     });
 
-    final Pagination pagination;
-    final List<Sleep> sleep;
+    final Pagination? pagination;
+    final List<Sleep>? sleep;
 
     factory SleepData.fromJson(Map<String, dynamic> json) => SleepData(
         pagination: Pagination.fromJson(json["pagination"]),
@@ -23,8 +23,8 @@ class SleepData {
     );
 
     Map<String, dynamic> toJson() => {
-        "pagination": pagination.toJson(),
-        "sleep": List<dynamic>.from(sleep.map((x) => x.toJson())),
+        "pagination": pagination!.toJson(),
+        "sleep": List<dynamic>.from(sleep!.map((x) => x.toJson())),
     };
 }
 
@@ -38,12 +38,12 @@ class Pagination {
         this.sort,
     });
 
-    final DateTime beforeDate;
-    final int limit;
-    final String next;
-    final int offset;
-    final String previous;
-    final String sort;
+    final DateTime? beforeDate;
+    final int? limit;
+    final String? next;
+    final int? offset;
+    final String? previous;
+    final String? sort;
 
     factory Pagination.fromJson(Map<String, dynamic> json) => Pagination(
         beforeDate: DateTime.parse(json["beforeDate"]),
@@ -55,7 +55,7 @@ class Pagination {
     );
 
     Map<String, dynamic> toJson() => {
-        "beforeDate": "${beforeDate.year.toString().padLeft(4, '0')}-${beforeDate.month.toString().padLeft(2, '0')}-${beforeDate.day.toString().padLeft(2, '0')}",
+        "beforeDate": "${beforeDate?.year.toString().padLeft(4, '0')}-${beforeDate?.month.toString().padLeft(2, '0')}-${beforeDate?.day.toString().padLeft(2, '0')}",
         "limit": limit,
         "next": next,
         "offset": offset,
@@ -83,21 +83,21 @@ class Sleep {
         this.type,
     });
 
-    final DateTime dateOfSleep;
-    final int duration;
-    final int efficiency;
-    final DateTime endTime;
-    final int infoCode;
-    final bool isMainSleep;
-    final Levels levels;
-    final int logId;
-    final int minutesAfterWakeup;
-    final int minutesAsleep;
-    final int minutesAwake;
-    final int minutesToFallAsleep;
-    final DateTime startTime;
-    final int timeInBed;
-    final String type;
+    final DateTime? dateOfSleep;
+    final int? duration;
+    final int? efficiency;
+    final DateTime? endTime;
+    final int? infoCode;
+    final bool? isMainSleep;
+    final Levels? levels;
+    final int? logId;
+    final int? minutesAfterWakeup;
+    final int? minutesAsleep;
+    final int? minutesAwake;
+    final int? minutesToFallAsleep;
+    final DateTime? startTime;
+    final int? timeInBed;
+    final String? type;
 
     factory Sleep.fromJson(Map<String, dynamic> json) => Sleep(
         dateOfSleep: DateTime.parse(json["dateOfSleep"]),
@@ -118,19 +118,19 @@ class Sleep {
     );
 
     Map<String, dynamic> toJson() => {
-        "dateOfSleep": "${dateOfSleep.year.toString().padLeft(4, '0')}-${dateOfSleep.month.toString().padLeft(2, '0')}-${dateOfSleep.day.toString().padLeft(2, '0')}",
+        "dateOfSleep": "${dateOfSleep!.year.toString().padLeft(4, '0')}-${dateOfSleep?.month.toString().padLeft(2, '0')}-${dateOfSleep!.day.toString().padLeft(2, '0')}",
         "duration": duration,
         "efficiency": efficiency,
-        "endTime": endTime.toIso8601String(),
+        "endTime": endTime?.toIso8601String(),
         "infoCode": infoCode,
         "isMainSleep": isMainSleep,
-        "levels": levels.toJson(),
+        "levels": levels?.toJson(),
         "logId": logId,
         "minutesAfterWakeup": minutesAfterWakeup,
         "minutesAsleep": minutesAsleep,
         "minutesAwake": minutesAwake,
         "minutesToFallAsleep": minutesToFallAsleep,
-        "startTime": startTime.toIso8601String(),
+        "startTime": startTime?.toIso8601String(),
         "timeInBed": timeInBed,
         "type": type,
     };
@@ -142,8 +142,8 @@ class Levels {
         this.summary,
     });
 
-    final List<Datum> data;
-    final Summary summary;
+    final List<Datum>? data;
+    final Summary? summary;
 
     factory Levels.fromJson(Map<String, dynamic> json) => Levels(
         data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
@@ -151,8 +151,8 @@ class Levels {
     );
 
     Map<String, dynamic> toJson() => {
-        "data": List<dynamic>.from(data.map((x) => x.toJson())),
-        "summary": summary.toJson(),
+        "data": List<dynamic>.from(data!.map((x) => x.toJson())),
+        "summary": summary!.toJson(),
     };
 }
 
@@ -163,9 +163,9 @@ class Datum {
         this.seconds,
     });
 
-    final DateTime dateTime;
-    final String level;
-    final int seconds;
+    final DateTime? dateTime;
+    final String? level;
+    final int? seconds;
 
     factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         dateTime: DateTime.parse(json["dateTime"]),
@@ -174,7 +174,7 @@ class Datum {
     );
 
     Map<String, dynamic> toJson() => {
-        "dateTime": dateTime.toIso8601String(),
+        "dateTime": dateTime!.toIso8601String(),
         "level": level,
         "seconds": seconds,
     };
@@ -187,9 +187,9 @@ class Summary {
         this.restless,
     });
 
-    final Asleep asleep;
-    final Asleep awake;
-    final Asleep restless;
+    final Asleep? asleep;
+    final Asleep? awake;
+    final Asleep? restless;
 
     factory Summary.fromJson(Map<String, dynamic> json) => Summary(
         asleep: Asleep.fromJson(json["asleep"]),
@@ -198,9 +198,9 @@ class Summary {
     );
 
     Map<String, dynamic> toJson() => {
-        "asleep": asleep.toJson(),
-        "awake": awake.toJson(),
-        "restless": restless.toJson(),
+        "asleep": asleep!.toJson(),
+        "awake": awake!.toJson(),
+        "restless": restless!.toJson(),
     };
 }
 
@@ -210,8 +210,8 @@ class Asleep {
         this.minutes,
     });
 
-    final int count;
-    final int minutes;
+    final int? count;
+    final int? minutes;
 
     factory Asleep.fromJson(Map<String, dynamic> json) => Asleep(
         count: json["count"],

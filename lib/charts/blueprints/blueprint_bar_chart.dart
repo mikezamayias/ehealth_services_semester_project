@@ -3,9 +3,9 @@ import 'package:fl_chart/fl_chart.dart';
 
 class BlueprintBarChart extends StatelessWidget {
   const BlueprintBarChart({
-    Key key,
-    @required this.readings,
-    @required this.barData,
+    Key? key,
+    required this.readings,
+    required this.barData,
   }) : super(key: key);
 
   final List<dynamic> readings;
@@ -26,25 +26,25 @@ class BlueprintBarChart extends StatelessWidget {
           show: true,
           border: Border(
             bottom: BorderSide(
-              color: Colors.grey[850],
+              color: Colors.grey[850]!,
               width: 3,
             ),
           ),
         ),
-        gridData: FlGridData(
+        gridData: const FlGridData(
           show: true,
         ),
-        axisTitleData: FlAxisTitleData(
-          show: false,
-        ),
-        titlesData: FlTitlesData(
+        // axisTitleData: FlAxisTitleData(
+        //   show: false,
+        // ),
+        titlesData: const FlTitlesData(
           show: true,
-          leftTitles: SideTitles(
-            showTitles: true,
-          ),
-          bottomTitles: SideTitles(
-            showTitles: true,
-          ),
+          // leftTitles: SideTitles(
+          //   showTitles: true,
+          // ),
+          // bottomTitles: SideTitles(
+          //   showTitles: true,
+          // ),
         ),
       ),
     );

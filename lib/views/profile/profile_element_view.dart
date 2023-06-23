@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class ProfileElementView extends StatelessWidget {
   const ProfileElementView({
-    Key key,
-    @required this.flex,
-    @required this.text,
-    @required this.child,
+    Key? key,
+    required this.flex,
+    required this.text,
+    required this.child,
   }) : super(key: key);
 
   final int flex;

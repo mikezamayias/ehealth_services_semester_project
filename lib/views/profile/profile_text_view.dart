@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class ProfileTextView extends StatelessWidget {
   const ProfileTextView({
-    Key key,
-    @required this.text,
-    @required this.data,
+    Key? key,
+    required this.text,
+    required this.data,
   }) : super(key: key);
 
   final String text;
@@ -16,15 +16,13 @@ class ProfileTextView extends StatelessWidget {
     return ProfileElementView(
       flex: 1,
       text: text,
-      child: data != null
-          ? Text(
-              data,
-              textAlign: TextAlign.right,
-              style: const TextStyle(
-                color: Colors.white,
-              ),
-            )
-          : Container(),
+      child: Text(
+        data,
+        textAlign: TextAlign.right,
+        style: const TextStyle(
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

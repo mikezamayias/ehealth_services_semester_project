@@ -4,20 +4,20 @@ import 'package:jiffy/jiffy.dart';
 
 class BlueprintLineChart extends StatelessWidget {
   const BlueprintLineChart({
-    Key key,
-    @required this.minY,
-    @required this.maxY,
-    @required this.interval,
-    @required this.readingsType,
-    @required this.graphData,
-    @required this.lineColors,
+    Key? key,
+    required this.minY,
+    required this.maxY,
+    required this.interval,
+    required this.readingsType,
+    required this.graphData,
+    required this.lineColors,
     this.yLabels,
   }) : super(key: key);
 
   final double minY;
   final double maxY;
   final double interval;
-  final Function yLabels;
+  final Function? yLabels;
   final List<dynamic> readingsType;
   final Map<String, List<FlSpot>> graphData;
   final List<Color> lineColors;
@@ -33,7 +33,7 @@ class BlueprintLineChart extends StatelessWidget {
         titlesData: titlesDataPreferences(),
         backgroundColor: Colors.transparent,
         borderData: borderDataPreferences(),
-        clipData: FlClipData.all(),
+        clipData: const FlClipData.all(),
         lineBarsData: lineBarsDataPreferences(),
       ),
     );
@@ -42,16 +42,14 @@ class BlueprintLineChart extends StatelessWidget {
   List<LineChartBarData> lineBarsDataPreferences() => List.generate(
         graphData.keys.length,
         (index) => LineChartBarData(
-          colors: [
-            lineColors.elementAt(index),
-          ],
-          spots: graphData[graphData.keys.elementAt(index)],
+          color: lineColors.elementAt(index),
+          spots: graphData[graphData.keys.elementAt(index)]!,
           show: true,
           isCurved: true,
           preventCurveOverShooting: false,
           barWidth: 6,
           isStrokeCapRound: true,
-          dotData: FlDotData(
+          dotData: const FlDotData(
             show: false,
           ),
           belowBarData: BarAreaData(
@@ -81,43 +79,46 @@ class BlueprintLineChart extends StatelessWidget {
       );
 
   FlTitlesData titlesDataPreferences() => FlTitlesData(
-        leftTitles: SideTitles(
-          showTitles: true,
-          margin: 10.0,
-          // reservedSize: 1.0,
-          interval: interval,
-          getTextStyles: (value) => const TextStyle(
-            color: Color(0xff303030),
-            fontSize: 12,
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            interval: interval,
+            reservedSize: 1.0,
           ),
-          getTitles: yLabels,
         ),
-        bottomTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (value) => const TextStyle(
-            color: Color(0xff303030),
-            fontSize: 12,
-          ),
-          getTitles: (value) {
-            try {
-              return Jiffy(readingsType[value.toInt()].dateTime)
-                  .format('E\ndd/MM');
-            } catch (e) {
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: true,
+            getTitlesWidget: (value, valuem) {
               try {
-                return Jiffy(readingsType[value.toInt()].dateOfSleep)
-                    .format('E\ndd/MM');
+                return Text(
+                  Jiffy.parseFromDateTime(
+                    readingsType[value.toInt()].dateTime,
+                  ).format(pattern: 'E\ndd/MM'),
+                );
               } catch (e) {
-                return Jiffy(readingsType[value.toInt()].originalStartTime)
-                    .format('E\ndd/MM');
+                try {
+                  return Text(
+                    Jiffy.parseFromDateTime(
+                      readingsType[value.toInt()].dateOfSleep,
+                    ).format(pattern: 'E\ndd/MM'),
+                  );
+                } catch (e) {
+                  return Text(
+                    Jiffy.parseFromDateTime(
+                      readingsType[value.toInt()].originalStartTime,
+                    ).format(pattern: 'E\ndd/MM'),
+                  );
+                }
               }
-            }
-          },
+            },
+          ),
         ),
       );
 
   FlBorderData borderDataPreferences() => FlBorderData(
         border: Border.all(
-          color: Colors.grey[850],
+          color: Colors.grey[850]!,
         ),
         show: true,
       );

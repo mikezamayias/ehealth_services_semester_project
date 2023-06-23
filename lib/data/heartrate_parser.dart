@@ -14,7 +14,7 @@ class HeartrateData {
     this.activitiesHeart,
   });
 
-  final List<ActivitiesHeart> activitiesHeart;
+  final List<ActivitiesHeart>? activitiesHeart;
 
   factory HeartrateData.fromJson(Map<String, dynamic> json) => HeartrateData(
         activitiesHeart: List<ActivitiesHeart>.from(
@@ -23,7 +23,7 @@ class HeartrateData {
 
   Map<String, dynamic> toJson() => {
         "activities-heart":
-            List<dynamic>.from(activitiesHeart.map((x) => x.toJson())),
+            List<dynamic>.from(activitiesHeart!.map((x) => x.toJson())),
       };
 }
 
@@ -35,10 +35,10 @@ class ActivitiesHeart {
     this.aveValue,
   });
 
-  final DateTime dateTime;
-  final int minValue;
-  final int maxValue;
-  final int aveValue;
+  final DateTime? dateTime;
+  final int? minValue;
+  final int? maxValue;
+  final int? aveValue;
 
   factory ActivitiesHeart.fromJson(Map<String, dynamic> json) =>
       ActivitiesHeart(
@@ -50,7 +50,7 @@ class ActivitiesHeart {
 
   Map<String, dynamic> toJson() => {
         "dateTime":
-            "${dateTime.year.toString().padLeft(4, '0')}-${dateTime.month.toString().padLeft(2, '0')}-${dateTime.day.toString().padLeft(2, '0')}",
+            "${dateTime?.year.toString().padLeft(4, '0')}-${dateTime?.month.toString().padLeft(2, '0')}-${dateTime?.day.toString().padLeft(2, '0')}",
         "minValue": minValue,
         "maxValue": maxValue,
         "aveValue": aveValue,

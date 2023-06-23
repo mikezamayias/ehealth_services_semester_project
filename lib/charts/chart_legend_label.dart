@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class ChartLegendLabel extends StatelessWidget {
   const ChartLegendLabel({
-    Key key,
-    @required this.text,
-    @required this.backgroundColor,
-    @required this.textColor,
+    Key? key,
+    required this.text,
+    required this.backgroundColor,
+    required this.textColor,
   }) : super(key: key);
 
   final String text;

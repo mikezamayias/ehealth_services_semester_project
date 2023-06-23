@@ -15,8 +15,8 @@ class ActivityData {
     this.pagination,
   });
 
-  final List<Activity> activities;
-  final Pagination pagination;
+  final List<Activity>? activities;
+  final Pagination? pagination;
 
   factory ActivityData.fromJson(Map<String, dynamic> json) => ActivityData(
         activities: json["activities"] == null
@@ -31,7 +31,7 @@ class ActivityData {
   Map<String, dynamic> toJson() => {
         "activities": activities == null
             ? null
-            : List<dynamic>.from(activities.map((x) => x.toJson())),
+            : List<dynamic>.from(activities!.map((x) => x.toJson())),
         "pagination": pagination?.toJson(),
       };
 }
@@ -61,45 +61,40 @@ class Activity {
     this.steps,
   });
 
-  final int activeDuration;
-  final List<ActivityLevel> activityLevel;
-  final String activityName;
-  final int activityTypeId;
-  final int calories;
-  final String caloriesLink;
-  final int distance;
-  final String distanceUnit;
-  final int duration;
-  final bool hasActiveZoneMinutes;
-  final DateTime lastModified;
-  final int logId;
-  final String logType;
-  final ManualValuesSpecified manualValuesSpecified;
-  final int originalDuration;
-  final DateTime originalStartTime;
-  final double pace;
-  final Source source;
-  final int speed;
-  final DateTime startTime;
-  final int steps;
+  final int? activeDuration;
+  final List<ActivityLevel>? activityLevel;
+  final String? activityName;
+  final int? activityTypeId;
+  final int? calories;
+  final String? caloriesLink;
+  final int? distance;
+  final String? distanceUnit;
+  final int? duration;
+  final bool? hasActiveZoneMinutes;
+  final DateTime? lastModified;
+  final int? logId;
+  final String? logType;
+  final ManualValuesSpecified? manualValuesSpecified;
+  final int? originalDuration;
+  final DateTime? originalStartTime;
+  final double? pace;
+  final Source? source;
+  final int? speed;
+  final DateTime? startTime;
+  final int? steps;
 
   factory Activity.fromJson(Map<String, dynamic> json) => Activity(
-        activeDuration:
-            json["activeDuration"],
+        activeDuration: json["activeDuration"],
         activityLevel: json["activityLevel"] == null
             ? null
             : List<ActivityLevel>.from(
                 json["activityLevel"].map((x) => ActivityLevel.fromJson(x))),
-        activityName:
-            json["activityName"],
-        activityTypeId:
-            json["activityTypeId"],
+        activityName: json["activityName"],
+        activityTypeId: json["activityTypeId"],
         calories: json["calories"],
-        caloriesLink:
-            json["caloriesLink"],
+        caloriesLink: json["caloriesLink"],
         distance: json["distance"],
-        distanceUnit:
-            json["distanceUnit"],
+        distanceUnit: json["distanceUnit"],
         duration: json["duration"],
         hasActiveZoneMinutes: json["hasActiveZoneMinutes"],
         lastModified: json["lastModified"] == null
@@ -110,8 +105,7 @@ class Activity {
         manualValuesSpecified: json["manualValuesSpecified"] == null
             ? null
             : ManualValuesSpecified.fromJson(json["manualValuesSpecified"]),
-        originalDuration:
-            json["originalDuration"],
+        originalDuration: json["originalDuration"],
         originalStartTime: json["originalStartTime"] == null
             ? null
             : DateTime.parse(json["originalStartTime"]),
@@ -128,7 +122,7 @@ class Activity {
         "activeDuration": activeDuration,
         "activityLevel": activityLevel == null
             ? null
-            : List<dynamic>.from(activityLevel.map((x) => x.toJson())),
+            : List<dynamic>.from(activityLevel!.map((x) => x.toJson())),
         "activityName": activityName,
         "activityTypeId": activityTypeId,
         "calories": calories,
@@ -136,10 +130,8 @@ class Activity {
         "distance": distance,
         "distanceUnit": distanceUnit,
         "duration": duration,
-        "hasActiveZoneMinutes":
-            hasActiveZoneMinutes,
-        "lastModified":
-            lastModified?.toIso8601String(),
+        "hasActiveZoneMinutes": hasActiveZoneMinutes,
+        "lastModified": lastModified?.toIso8601String(),
         "logId": logId,
         "logType": logType,
         "manualValuesSpecified": manualValuesSpecified?.toJson(),
@@ -159,8 +151,8 @@ class ActivityLevel {
     this.name,
   });
 
-  final int minutes;
-  final Name name;
+  final int? minutes;
+  final Name? name;
 
   factory ActivityLevel.fromJson(Map<String, dynamic> json) => ActivityLevel(
         minutes: json["minutes"],
@@ -175,12 +167,27 @@ class ActivityLevel {
 
 enum Name { sedentary, lightly, fairly, very }
 
-final nameValues = EnumValues({
-  "fairly": Name.fairly,
-  "lightly": Name.lightly,
-  "sedentary": Name.sedentary,
-  "very": Name.very
-});
+// final nameValues = EnumValues({
+//   "fairly": Name.fairly,
+//   "lightly": Name.lightly,
+//   "sedentary": Name.sedentary,
+//   "very": Name.very
+// });
+
+final nameValues = EnumValues(
+  {
+    "fairly": Name.fairly,
+    "lightly": Name.lightly,
+    "sedentary": Name.sedentary,
+    "very": Name.very
+  },
+  {
+    Name.fairly: "fairly",
+    Name.lightly: "lightly",
+    Name.sedentary: "sedentary",
+    Name.very: "very",
+  },
+);
 
 class ManualValuesSpecified {
   ManualValuesSpecified({
@@ -189,9 +196,9 @@ class ManualValuesSpecified {
     this.steps,
   });
 
-  final bool calories;
-  final bool distance;
-  final bool steps;
+  final bool? calories;
+  final bool? distance;
+  final bool? steps;
 
   factory ManualValuesSpecified.fromJson(Map<String, dynamic> json) =>
       ManualValuesSpecified(
@@ -216,11 +223,11 @@ class Source {
     this.url,
   });
 
-  final String id;
-  final String name;
-  final List<dynamic> trackerFeatures;
-  final String type;
-  final String url;
+  final String? id;
+  final String? name;
+  final List<dynamic>? trackerFeatures;
+  final String? type;
+  final String? url;
 
   factory Source.fromJson(Map<String, dynamic> json) => Source(
         id: json["id"],
@@ -237,7 +244,7 @@ class Source {
         "name": name,
         "trackerFeatures": trackerFeatures == null
             ? null
-            : List<dynamic>.from(trackerFeatures.map((x) => x)),
+            : List<dynamic>.from(trackerFeatures!.map((x) => x)),
         "type": type,
         "url": url,
       };
@@ -253,12 +260,12 @@ class Pagination {
     this.sort,
   });
 
-  final DateTime beforeDate;
-  final int limit;
-  final String next;
-  final int offset;
-  final String previous;
-  final String sort;
+  final DateTime? beforeDate;
+  final int? limit;
+  final String? next;
+  final int? offset;
+  final String? previous;
+  final String? sort;
 
   factory Pagination.fromJson(Map<String, dynamic> json) => Pagination(
         beforeDate: json["beforeDate"] == null
@@ -274,7 +281,7 @@ class Pagination {
   Map<String, dynamic> toJson() => {
         "beforeDate": beforeDate == null
             ? null
-            : "${beforeDate.year.toString().padLeft(4, '0')}-${beforeDate.month.toString().padLeft(2, '0')}-${beforeDate.day.toString().padLeft(2, '0')}",
+            : "${beforeDate?.year.toString().padLeft(4, '0')}-${beforeDate?.month.toString().padLeft(2, '0')}-${beforeDate?.day.toString().padLeft(2, '0')}",
         "limit": limit,
         "next": next,
         "offset": offset,
@@ -287,10 +294,12 @@ class EnumValues<T> {
   Map<String, T> map;
   Map<T, String> reverseMap;
 
-  EnumValues(this.map);
+  EnumValues(
+    this.map,
+    this.reverseMap,
+  );
 
   Map<T, String> get reverse {
-    reverseMap ??= map.map((k, v) => MapEntry(v, k));
     return reverseMap;
   }
 }

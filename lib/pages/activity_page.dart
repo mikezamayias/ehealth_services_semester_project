@@ -9,13 +9,13 @@ import '../data/activity_parser.dart';
 import 'blueprints/chart_page_blueprint.dart';
 
 class ActivityPage extends StatefulWidget {
-  const ActivityPage({Key key}) : super(key: key);
+  const ActivityPage({Key? key}) : super(key: key);
 
   @override
-  _ActivityPageState createState() => _ActivityPageState();
+  ActivityPageState createState() => ActivityPageState();
 }
 
-class _ActivityPageState extends State<ActivityPage> {
+class ActivityPageState extends State<ActivityPage> {
   String text = 'Activity Data';
   Color baseColor = Colors.green;
 
@@ -25,12 +25,12 @@ class _ActivityPageState extends State<ActivityPage> {
   List<FlSpot> caloriesData = [];
 
   Future<String> _loadJsonActivity() async =>
-      await rootBundle.loadString(activityData['jsonPath']);
+      await rootBundle.loadString(activityData['jsonPath']!);
 
   Future loadActivityData() async {
     String jsonString = await _loadJsonActivity();
     final List<Activity> activityData = List.from(
-      activityDataFromJson(jsonString).activities.reversed,
+      activityDataFromJson(jsonString).activities!.reversed,
     );
     setState(() {
       for (Activity activity in activityData) {
@@ -38,13 +38,13 @@ class _ActivityPageState extends State<ActivityPage> {
         stepsData.add(
           FlSpot(
             activityData.indexOf(activity).toDouble(),
-            activity.steps.toDouble(),
+            activity.steps!.toDouble(),
           ),
         );
         caloriesData.add(
           FlSpot(
             activityData.indexOf(activity).toDouble(),
-            activity.calories.toDouble() / 100,
+            activity.calories!.toDouble() / 100,
           ),
         );
       }
@@ -81,7 +81,7 @@ class _ActivityPageState extends State<ActivityPage> {
           child: ChartLegendLabel(
             text: 'Steps',
             backgroundColor: baseColor,
-            textColor: Colors.grey[200],
+            textColor: Colors.grey[200]!,
           ),
         ),
         Expanded(
@@ -89,7 +89,7 @@ class _ActivityPageState extends State<ActivityPage> {
           child: ChartLegendLabel(
             text: 'Calories in 10*kcal units',
             backgroundColor: Colors.amber,
-            textColor: Colors.grey[850],
+            textColor: Colors.grey[850]!,
           ),
         )
       ],

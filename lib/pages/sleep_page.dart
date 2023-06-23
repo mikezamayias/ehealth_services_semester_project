@@ -9,13 +9,13 @@ import '../data/sleep_parser.dart';
 import 'blueprints/chart_page_blueprint.dart';
 
 class SleepPage extends StatefulWidget {
-  const SleepPage({Key key}) : super(key: key);
+  const SleepPage({Key? key}) : super(key: key);
 
   @override
-  _SleepPageState createState() => _SleepPageState();
+  SleepPageState createState() => SleepPageState();
 }
 
-class _SleepPageState extends State<SleepPage> {
+class SleepPageState extends State<SleepPage> {
   String text = 'Sleep Data';
   Color baseColor = Colors.purple;
 
@@ -24,12 +24,12 @@ class _SleepPageState extends State<SleepPage> {
   List<FlSpot> readings = [];
 
   Future<String> _loadJsonSleep() async =>
-      await rootBundle.loadString(sleepData['jsonPath']);
+      await rootBundle.loadString(sleepData['jsonPath']!);
 
   Future loadSleepData() async {
     String jsonString = await _loadJsonSleep();
     final List<Sleep> sleepData = List.from(
-      sleepDataFromJson(jsonString).sleep.reversed,
+      sleepDataFromJson(jsonString).sleep!.reversed,
     );
     setState(() {
       for (Sleep reading in sleepData) {
@@ -37,7 +37,7 @@ class _SleepPageState extends State<SleepPage> {
         readings.add(
           FlSpot(
             sleepData.indexOf(reading).toDouble(),
-            reading.minutesAsleep.toDouble() / 60,
+            reading.minutesAsleep!.toDouble() / 60,
           ),
         );
       }
@@ -76,7 +76,7 @@ class _SleepPageState extends State<SleepPage> {
           child: ChartLegendLabel(
             text: 'Time asleep',
             backgroundColor: baseColor,
-            textColor: Colors.grey[200],
+            textColor: Colors.grey[200]!,
           ),
         )
       ],
