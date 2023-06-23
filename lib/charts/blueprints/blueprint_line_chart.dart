@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:jiffy/jiffy.dart';
 
-class BlueprintLineChart extends StatelessWidget {
+import 'dart:async';
+
+class BlueprintLineChart extends StatefulWidget {
   const BlueprintLineChart({
     Key? key,
     required this.minY,
@@ -23,13 +25,40 @@ class BlueprintLineChart extends StatelessWidget {
   final List<Color> lineColors;
 
   @override
+  BlueprintLineChartState createState() => BlueprintLineChartState();
+}
+
+class BlueprintLineChartState extends State<BlueprintLineChart> {
+  bool _showChart = false;
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(milliseconds: 500), () {
+      setState(() {
+        _showChart = true;
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    return _showChart
+        ? lineChart()
+        : Center(
+            child: CircularProgressIndicator(
+              color: widget.lineColors.last,
+            ),
+          );
+  }
+
+  Widget lineChart() {
     return LineChart(
       LineChartData(
-        minY: minY,
-        maxY: maxY,
+        minY: widget.minY,
+        maxY: widget.maxY,
         lineTouchData: lineTouchDataPreferences(),
-        gridData: gridDataPreferences(interval / 4),
+        gridData: gridDataPreferences(widget.interval / 4),
         titlesData: titlesDataPreferences(),
         backgroundColor: Colors.transparent,
         borderData: borderDataPreferences(),
@@ -40,10 +69,10 @@ class BlueprintLineChart extends StatelessWidget {
   }
 
   List<LineChartBarData> lineBarsDataPreferences() => List.generate(
-        graphData.keys.length,
+        widget.graphData.keys.length,
         (index) => LineChartBarData(
-          color: lineColors.elementAt(index),
-          spots: graphData[graphData.keys.elementAt(index)]!,
+          color: widget.lineColors.elementAt(index),
+          spots: widget.graphData[widget.graphData.keys.elementAt(index)]!,
           show: true,
           isCurved: true,
           preventCurveOverShooting: false,
@@ -82,7 +111,7 @@ class BlueprintLineChart extends StatelessWidget {
         leftTitles: AxisTitles(
           sideTitles: SideTitles(
             showTitles: true,
-            interval: interval,
+            interval: widget.interval,
             reservedSize: 1.0,
           ),
         ),
@@ -93,20 +122,20 @@ class BlueprintLineChart extends StatelessWidget {
               try {
                 return Text(
                   Jiffy.parseFromDateTime(
-                    readingsType[value.toInt()].dateTime,
+                    widget.readingsType[value.toInt()].dateTime,
                   ).format(pattern: 'E\ndd/MM'),
                 );
               } catch (e) {
                 try {
                   return Text(
                     Jiffy.parseFromDateTime(
-                      readingsType[value.toInt()].dateOfSleep,
+                      widget.readingsType[value.toInt()].dateOfSleep,
                     ).format(pattern: 'E\ndd/MM'),
                   );
                 } catch (e) {
                   return Text(
                     Jiffy.parseFromDateTime(
-                      readingsType[value.toInt()].originalStartTime,
+                      widget.readingsType[value.toInt()].originalStartTime,
                     ).format(pattern: 'E\ndd/MM'),
                   );
                 }
